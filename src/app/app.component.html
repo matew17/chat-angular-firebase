@@ -1,0 +1,20 @@
+<div class="container main-container">
+  <h1>Chat utilizando firebase</h1>
+  <hr>
+  <div class="row animated fadeIn fast" *ngIf="chatService.usuario">
+    <div class="col-md-12 text-right">
+      <button type="button" class="btn btn-outline-danger" (click)="chatService.logout()">
+          Salir
+        </button>
+    </div>
+  </div>
+
+  <div *ngIf="!chatService.usuario" class="animated fadeIn fast">
+    <app-login></app-login>
+  </div>
+
+  <div *ngIf="chatService.usuario" class="chat-window animated fadeIn fast">
+    <app-chat></app-chat>
+  </div>
+
+</div>
